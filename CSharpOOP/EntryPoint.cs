@@ -9,7 +9,9 @@ public class EntryPoint
         Warrior firstWarrior = new Warrior();
         Warrior secondWarrior = new Warrior(71, 120);
         Warrior thirdWarrior = new Warrior(68, 110, "Arnold");
-
+        Console.WriteLine(firstWarrior.ID);
+        Console.WriteLine(secondWarrior.ID);
+        Console.WriteLine(thirdWarrior.ID);
         //Warrior theGoodGal = new Warrior(62, 120, "Sue");
         //Warrior theBadGal = new Warrior(63, 136, "Alice");
         ////you can set those values below if your constructor doesn't have any parameters that you need to pass in
@@ -21,7 +23,7 @@ public class EntryPoint
         //Warrior youngWarrior = new Warrior(150, 50);
         //// youngWarrior.Age = 18;
         //Console.WriteLine($"Warrior's age is {youngWarrior.Age}.");
-       
+
         //Console.WriteLine("Here's the height " + theGoodGal.Height);
         //Console.WriteLine("Here's the weight " + theGoodGal.Weight);
         //try

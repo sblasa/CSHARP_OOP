@@ -5,11 +5,39 @@ namespace Characters.Warriors
 {
     public class Warrior
     {
+        private const int DEFAULT_HEIGHT = 63;
+        private const int DEFAULT_WEIGHT = 130;
+        private const int DEFAULT_AGE = 18;
+        private const string DEFAULT_NAME = "Aqualine";
+        private readonly Sword DEFAULT_SWORD_WEAPON = new Sword();
+
+        private static int idCounter;
+        public static int IdCounter
+        {
+            get
+            {
+                return idCounter;
+            }
+            set
+            {
+                idCounter = value;
+            }
+        }
+        private readonly int id;
         private int height;
         private int weight;
         private string name;
         private int age;
         private Sword swordWeapon;
+
+        public int ID
+        {
+            get
+            {
+                return this.id;
+            }
+
+        }
 
         public int Height
         {
@@ -87,24 +115,25 @@ namespace Characters.Warriors
 
         //Constructors
         public Warrior()
-            : this(160,100)
+            : this(DEFAULT_HEIGHT,DEFAULT_WEIGHT)
         {
         }
 
 
         public Warrior(int height, int weight)
-            :this(height, weight, "Mack")
+            :this(height, weight, DEFAULT_NAME)
         {
         }
 
         public Warrior(int height, int weight, string name)
         {
-
+            IdCounter++;
+            this.id = idCounter;
             this.Height = height;
             this.Weight = weight;
             this.Name = name;
-            this.Age = 18;
-            this.SwordWeapon = new Sword();
+            this.Age = DEFAULT_AGE;
+            this.SwordWeapon = DEFAULT_SWORD_WEAPON;
         }
 
 
