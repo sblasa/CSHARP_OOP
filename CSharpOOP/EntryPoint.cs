@@ -9,9 +9,10 @@ public class EntryPoint
         Warrior firstWarrior = new Warrior();
         Warrior secondWarrior = new Warrior(71, 120, "Jessi");
         Warrior thirdWarrior = new Warrior(68, 110, "Arnold");
-        Console.WriteLine(firstWarrior.ID);
-        Console.WriteLine(secondWarrior.ID);
-        Console.WriteLine(thirdWarrior.ID);
+
+        Tools.ColorfulwriteLine(firstWarrior.ID.ToString(), ConsoleColor.DarkRed);
+        Tools.ColorfulwriteLine(secondWarrior.ID.ToString(), ConsoleColor.DarkYellow);
+        Tools.ColorfulwriteLine(thirdWarrior.ID.ToString(), ConsoleColor.Cyan);
 
         Warrior.GetDefaultValues(secondWarrior);
         thirdWarrior.Greetings(secondWarrior);
