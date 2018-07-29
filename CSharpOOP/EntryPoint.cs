@@ -7,11 +7,14 @@ public class EntryPoint
     {
 
         Warrior firstWarrior = new Warrior();
-        Warrior secondWarrior = new Warrior(71, 120);
+        Warrior secondWarrior = new Warrior(71, 120, "Jessi");
         Warrior thirdWarrior = new Warrior(68, 110, "Arnold");
         Console.WriteLine(firstWarrior.ID);
         Console.WriteLine(secondWarrior.ID);
         Console.WriteLine(thirdWarrior.ID);
+
+        Warrior.GetDefaultValues(secondWarrior);
+        thirdWarrior.Greetings(secondWarrior);
         //Warrior theGoodGal = new Warrior(62, 120, "Sue");
         //Warrior theBadGal = new Warrior(63, 136, "Alice");
         ////you can set those values below if your constructor doesn't have any parameters that you need to pass in

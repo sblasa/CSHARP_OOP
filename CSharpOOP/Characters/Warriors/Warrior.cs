@@ -138,11 +138,20 @@ namespace Characters.Warriors
 
 
 
-        public void Greetings(Warrior warrior)
+        public void Greetings (Warrior warrior)
         {
-            System.Console.WriteLine($"Greetings, {warrior.Name}!");
+            Console.WriteLine($"Greetings, {warrior.Name}!");
 
         }
-    }
 
-}
+        public static void GetDefaultValues(Warrior warrior)
+        {
+            Console.WriteLine($"Default Height: {DEFAULT_HEIGHT}" +
+                $"\nDefault Weight: {DEFAULT_WEIGHT}" +
+                $"\nDefault Name: {DEFAULT_NAME}" +
+                $"\nDefault Age: {DEFAULT_AGE}" +
+                $"\nDefault Weapon Damage: {warrior.DEFAULT_SWORD_WEAPON.Damage}");                
+        }
+    } 
+
+} 
