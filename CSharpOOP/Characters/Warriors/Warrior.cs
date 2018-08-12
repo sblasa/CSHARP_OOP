@@ -1,5 +1,7 @@
 ﻿using System;
 using Weapons;
+using Enumerations;
+
 
 namespace Characters.Warriors
 {
@@ -28,6 +30,8 @@ namespace Characters.Warriors
         private int weight;
         private string name;
         private int age;
+        private int healthPoints;
+        private Faction faction;
         private Sword swordWeapon;
 
         public int ID
@@ -100,6 +104,28 @@ namespace Characters.Warriors
             }
 
         }
+        public int HealthPoints
+        {
+            get
+            {
+                return this.healthPoints;
+            }
+            set
+            {
+                this.healthPoints = value;
+            }
+        }
+        public Faction Faction
+        {
+            get
+            {
+                return this.faction;
+            }
+            private set
+            {
+                this.faction = value;
+            }
+        }
         public Sword SwordWeapon
         {
             get
@@ -121,19 +147,30 @@ namespace Characters.Warriors
 
 
         public Warrior(int height, int weight)
-            :this(height, weight, DEFAULT_NAME)
+            : this(height, weight, DEFAULT_NAME, Faction.Default)
         {
         }
 
-        public Warrior(int height, int weight, string name)
+        public Warrior(int height, int weight, string name, Faction faction)
         {
             IdCounter++;
             this.id = idCounter;
             this.Height = height;
             this.Weight = weight;
             this.Name = name;
+            this.Faction = faction;
             this.Age = DEFAULT_AGE;
             this.SwordWeapon = DEFAULT_SWORD_WEAPON;
+            if (this.Faction == Faction.GoodGuy)
+            {
+                this.HealthPoints = 120;
+
+            }
+
+            else if (this.Faction == Faction.BadGuy)
+            {
+                this.HealthPoints = 100;
+            }
         }
 
 

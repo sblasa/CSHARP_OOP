@@ -1,5 +1,6 @@
 ﻿using Characters.Warriors;
-using System; 
+using System;
+using Enumerations;
 
 public class EntryPoint
 {
@@ -7,8 +8,10 @@ public class EntryPoint
     {
 
         Warrior firstWarrior = new Warrior();
-        Warrior secondWarrior = new Warrior(71, 120, "Jessi");
-        Warrior thirdWarrior = new Warrior(68, 110, "Arnold");
+        Warrior secondWarrior = new Warrior(71, 120);
+        Warrior thirdWarrior = new Warrior(68, 110);
+        Warrior fourthWarrior = new Warrior(78, 180, "Amy", Faction.GoodGuy);
+        Console.WriteLine(fourthWarrior.HealthPoints);
 
         Tools.ColorfulwriteLine(firstWarrior.ID.ToString(), ConsoleColor.DarkRed);
         Tools.ColorfulwriteLine(secondWarrior.ID.ToString(), ConsoleColor.DarkYellow);
