@@ -1,4 +1,5 @@
 ﻿using Characters.Warriors;
+using Characters.Spellcasters;
 using System;
 using Enumerations;
 
@@ -11,7 +12,10 @@ public class EntryPoint
         Warrior secondWarrior = new Warrior(71, 120);
         Warrior thirdWarrior = new Warrior(68, 110);
         Warrior fourthWarrior = new Warrior(78, 180, "Amy", Faction.GoodGuy);
+        Mage firstMage = new Mage();
+
         Console.WriteLine(fourthWarrior.HealthPoints);
+    
 
         Tools.ColorfulwriteLine(firstWarrior.ID.ToString(), ConsoleColor.DarkRed);
         Tools.ColorfulwriteLine(secondWarrior.ID.ToString(), ConsoleColor.DarkYellow);

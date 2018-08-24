@@ -5,7 +5,7 @@ using Enumerations;
 
 namespace Characters.Warriors
 {
-    public class Warrior
+    public class Warrior : Character
     {
         private const int DEFAULT_HEIGHT = 63;
         private const int DEFAULT_WEIGHT = 130;
@@ -27,10 +27,7 @@ namespace Characters.Warriors
         }
         private readonly int id;
         private int height;
-        private int weight;
         private string name;
-        private int age;
-        private int healthPoints;
         private Faction faction;
         private Sword swordWeapon;
 
@@ -56,18 +53,6 @@ namespace Characters.Warriors
 
             }
         }
-        public int Weight
-        {
-            get
-            {
-                return weight;
-            }
-
-            set
-            {
-                weight = value;
-            }
-        }
         public string Name
         {
             get
@@ -79,41 +64,6 @@ namespace Characters.Warriors
                 name = value;
             }
 
-        }
-        public int Age
-        {
-            get
-            {
-                return age;
-            }
-
-            set
-            {
-                if(value >= 18 && value <= 45)
-                {
-                    age = value;
-
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, $@"The selected age for {name}, is not a proper age for a Warrior. Please enter an age from 18 to 45.");
-                    
-                }
-                
-
-            }
-
-        }
-        public int HealthPoints
-        {
-            get
-            {
-                return this.healthPoints;
-            }
-            set
-            {
-                this.healthPoints = value;
-            }
         }
         public Faction Faction
         {
