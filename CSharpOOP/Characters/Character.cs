@@ -1,4 +1,6 @@
 ﻿
+using System;
+using System.Threading;
 
 namespace Characters
 {
@@ -7,6 +9,7 @@ namespace Characters
         private int healthPoints;
         private int weight;
         private int age;
+        private string name;
 
         public int HealthPoints
         {
@@ -30,7 +33,7 @@ namespace Characters
                 this.weight = value;
             }
         }
-        public int Age
+        public virtual int Age
         {
             get
             {
@@ -38,8 +41,32 @@ namespace Characters
             }
             set
             {
-                this.age = value;
+                if(value >= 18 && value <= 45)
+                {
+                    this.age = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Warriors need to be between the ages of 18 and 45.");
+                }
             }
+        }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+
+        }
+
+        public Character()
+        {
+
         }
 
         public Character(int healthPoints, int weight, int age)
@@ -47,6 +74,21 @@ namespace Characters
             this.HealthPoints = healthPoints;
             this.Weight = weight;
             this.Age = age;
+        }
+
+        protected void Greetings(string name)
+        {
+            Console.WriteLine($"Greetings, {this.Name}!");
+
+        }
+
+        public virtual void Move(int pauseBetweenMovements)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("I am moving.");
+                Thread.Sleep(pauseBetweenMovements);
+            }
         }
 
     }

@@ -27,7 +27,6 @@ namespace Characters.Warriors
         }
         private readonly int id;
         private int height;
-        private string name;
         private Faction faction;
         private Sword swordWeapon;
 
@@ -39,7 +38,6 @@ namespace Characters.Warriors
             }
 
         }
-
         public int Height
         {
             get
@@ -52,18 +50,6 @@ namespace Characters.Warriors
                 height = value;
 
             }
-        }
-        public string Name
-        {
-            get
-            {
-                return name; 
-            }
-            set
-            {
-                name = value;
-            }
-
         }
         public Faction Faction
         {
@@ -106,30 +92,34 @@ namespace Characters.Warriors
             IdCounter++;
             this.id = idCounter;
             this.Height = height;
-            this.Weight = weight;
+            base.Weight = weight;
             this.Name = name;
             this.Faction = faction;
-            this.Age = DEFAULT_AGE;
+            base.Age = DEFAULT_AGE; 
             this.SwordWeapon = DEFAULT_SWORD_WEAPON;
             if (this.Faction == Faction.GoodGuy)
             {
-                this.HealthPoints = 120;
-
+                base.HealthPoints = 120;
             }
-
             else if (this.Faction == Faction.BadGuy)
             {
-                this.HealthPoints = 100;
+                base.HealthPoints = 100;
             }
         }
 
 
-
-        public void Greetings (Warrior warrior)
-        {
-            Console.WriteLine($"Greetings, {warrior.Name}!");
+        public Warrior(int healthPoints, int weight, int age)
+        
+            : base(healthPoints, weight, age)
+        { 
 
         }
+
+        public void SpecialWarriorGreeting()
+        {
+            base.Greetings(base.Name);
+        }
+
 
         public static void GetDefaultValues(Warrior warrior)
         {
@@ -138,6 +128,12 @@ namespace Characters.Warriors
                 $"\nDefault Name: {DEFAULT_NAME}" +
                 $"\nDefault Age: {DEFAULT_AGE}" +
                 $"\nDefault Weapon Damage: {warrior.DEFAULT_SWORD_WEAPON.Damage}");                
+        }
+
+        public override void Move(int pauseBetweenMovements)
+        {
+            base.Move(pauseBetweenMovements);
+            Console.WriteLine("I have moved 10 times. I am a warrior.");
         }
     } 
 

@@ -9,12 +9,24 @@ public class EntryPoint
     {
 
         Warrior firstWarrior = new Warrior();
+        //firstWarrior.Move(500);
         Warrior secondWarrior = new Warrior(71, 120);
         Warrior thirdWarrior = new Warrior(68, 110);
         Warrior fourthWarrior = new Warrior(78, 180, "Amy", Faction.GoodGuy);
         Mage firstMage = new Mage();
+        //firstMage.Move(200);
+        try
+        {
+            firstMage.Age = 25;
+        }
 
-        Console.WriteLine(fourthWarrior.HealthPoints);
+        catch (ArgumentOutOfRangeException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        
+        
+        //Console.WriteLine(fourthWarrior.HealthPoints);
     
 
         Tools.ColorfulwriteLine(firstWarrior.ID.ToString(), ConsoleColor.DarkRed);
@@ -22,7 +34,7 @@ public class EntryPoint
         Tools.ColorfulwriteLine(thirdWarrior.ID.ToString(), ConsoleColor.Cyan);
 
         Warrior.GetDefaultValues(secondWarrior);
-        thirdWarrior.Greetings(secondWarrior);
+        thirdWarrior.SpecialWarriorGreeting();
         //Warrior theGoodGal = new Warrior(62, 120, "Sue");
         //Warrior theBadGal = new Warrior(63, 136, "Alice");
         ////you can set those values below if your constructor doesn't have any parameters that you need to pass in
