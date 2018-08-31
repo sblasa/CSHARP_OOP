@@ -93,7 +93,7 @@ namespace Characters.Warriors
             this.id = idCounter;
             this.Height = height;
             base.Weight = weight;
-            this.Name = name;
+            base.Name = name;
             this.Faction = faction;
             base.Age = DEFAULT_AGE; 
             this.SwordWeapon = DEFAULT_SWORD_WEAPON;
