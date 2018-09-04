@@ -14,16 +14,18 @@ public class EntryPoint
         Warrior thirdWarrior = new Warrior(68, 110);
         Warrior fourthWarrior = new Warrior(78, 180, "Amy", Faction.GoodGuy);
         Mage firstMage = new Mage();
+        firstWarrior.AddNumber(3, 7);
+        firstMage.AddNumber(3, 7);
         //firstMage.Move(200);
-        try
-        {
-            firstMage.Age = 25;
-        }
+        //try
+        //{
+        //    firstMage.Age = 25;
+        //}
 
-        catch (ArgumentOutOfRangeException ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
+        //catch (ArgumentOutOfRangeException ex)
+        //{
+        //    Console.WriteLine(ex.Message);
+        //}
         
         
         //Console.WriteLine(fourthWarrior.HealthPoints);
