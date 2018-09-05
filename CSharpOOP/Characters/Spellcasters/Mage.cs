@@ -74,17 +74,16 @@ namespace Characters.Spellcasters
             System.Console.WriteLine("I have moved. I am a Mage.");
         }
 
-        public void AddNumber(int firstNumber, int secondNumber)
-        {
-            int sum = firstNumber + secondNumber;
-            int modifiedSum = sum + 123;
-            Console.WriteLine(modifiedSum - 123);
-        }
 
         public void CastSpell(Warrior warrior)
         {
-            warrior.HealthPoints = warrior.HealthPoints - this.mySpell.Damage;
-            this.mana = this.mana - this.mySpell.ManaCost;
+            warrior.HealthPoints -= this.mySpell.Damage;
+            this.mana = this.mana -= this.mySpell.ManaCost;
+        }
+
+        public override void AddNumber(int firstNumber, int secondNumber)
+        {
+            throw new NotImplementedException();
         }
     }
 }

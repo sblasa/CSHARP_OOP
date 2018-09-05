@@ -6,7 +6,7 @@ using Weapons;
 
 namespace Characters.Warriors
 {
-    public class Warrior : Character, ICalculator
+    public class Warrior : Melee, ICalculator
     {
         private const int DEFAULT_HEIGHT = 63;
         private const int DEFAULT_WEIGHT = 130;
@@ -112,8 +112,8 @@ namespace Characters.Warriors
         public Warrior(int healthPoints, int weight, int age)
         
             : base(healthPoints, weight, age)
-        { 
-
+        {
+            this.Height = height;
         }
 
         public void SpecialWarriorGreeting()
@@ -137,7 +137,7 @@ namespace Characters.Warriors
             Console.WriteLine("I have moved 10 times. I am a warrior.");
         }
 
-        public void AddNumber(int firstNumber, int secondNumber)
+        public override void AddNumber(int firstNumber, int secondNumber)
         {
             Console.WriteLine(firstNumber + secondNumber);
         }
