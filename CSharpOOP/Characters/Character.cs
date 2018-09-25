@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Characters
 {
-    public abstract class Character : ICalculator
+    public abstract class Character
     {
         private int healthPoints;
         private int weight;
@@ -70,6 +70,7 @@ namespace Characters
 
         }
 
+        
         public Character(int healthPoints, int weight, int age)
         {
             this.HealthPoints = healthPoints;
@@ -77,7 +78,7 @@ namespace Characters
             this.Age = age;
         }
 
-        protected void Greetings(string name)
+        public void Greetings(string name)
         {
             Console.WriteLine($"Greetings, {this.Name}!");
 
@@ -91,9 +92,9 @@ namespace Characters
                 Thread.Sleep(pauseBetweenMovements);
             }
         }
-        public abstract void AddNumber(int firstNumber, int secondNumber)
+        public virtual int AddNumber(int firstNumber, int secondNumber)
         {
-            Console.WriteLine(firstNumber + secondNumber);
+            return firstNumber + secondNumber;
         }
 
     }

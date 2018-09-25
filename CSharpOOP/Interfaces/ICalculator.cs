@@ -4,7 +4,7 @@ namespace Interfaces
 {
     public interface ICalculator
     {
-        void AddNumber(int firstNumber, int secondNumber);
+        int AddNumber(int firstNumber, int secondNumber);
 
     }
 }

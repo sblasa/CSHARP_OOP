@@ -137,9 +137,9 @@ namespace Characters.Warriors
             Console.WriteLine("I have moved 10 times. I am a warrior.");
         }
 
-        public override void AddNumber(int firstNumber, int secondNumber)
+        public override int AddNumber(int firstNumber, int secondNumber)
         {
-            Console.WriteLine(firstNumber + secondNumber);
+           return firstNumber + secondNumber;
         }
     } 
 

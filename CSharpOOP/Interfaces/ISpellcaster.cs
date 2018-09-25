@@ -1,4 +1,5 @@
-﻿using Characters.Warriors;
+﻿using Characters;
+using Characters.Warriors;
 using System;
 
 
@@ -8,7 +9,7 @@ namespace Interfaces
     {
         int Mana { get; set; }
 
-        void CastSpell(Warrior warrior);
+        void CastSpell(Character character);
        
     }
 }
